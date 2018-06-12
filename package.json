@@ -1,0 +1,26 @@
+{
+  "name": "com.chinamobile.upload.uploadfile",
+  "version": "2.2.0",
+  "description": "this is a plugin about uploadfile",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+   "cordova": {
+    "id": "com.chinamobile.upload.UploadFile",
+    "platforms": [
+      "android",
+      "ios"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/liangzhongtai/uploadfile.git"
+  },
+  "keywords": [
+    "cordova",
+    "uploadfile"
+  ]
+}

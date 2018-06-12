@@ -1,0 +1,133 @@
+<?xml version='1.0' encoding='utf-8'?>
+<plugin id="com.chinamoblie.upload.uploadfile" version="2.2.0" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
+    <name>uploadfile</name>
+    <js-module name="uploadfile" src="www/uploadfile.js">
+        <clobbers target="cordova.plugins.uploadfile" />
+    </js-module>
+
+<platform name="android">
+        <!-- 文件上传插件 -->
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="UploadFile">
+                <param name="android-package" value="com.chinamobile.upload.UploadFile"/>
+            </feature>
+        </config-file>
+        <!-- 权限 -->
+        <config-file target="AndroidManifest.xml" parent="/*">
+            <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+            <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+			<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+        </config-file>
+
+        <!-- 适配sdk24及以上 -->
+        <config-file target="AndroidManifest.xml" parent="application">
+            <provider
+                android:name="com.chinamobile.upload.FileProvider"
+                android:authorities="${applicationId}.provider"
+                android:exported="false"
+                android:grantUriPermissions="true" >
+                <meta-data
+                    android:name="android.support.FILE_PROVIDER_PATHS"
+                    android:resource="@xml/uploadfile_provider_paths"/>
+            </provider>
+        </config-file>
+
+
+        <!-- 项目文件 -->
+        <source-file src="src/android/xml/uploadfile_provider_paths.xml"  target-dir="res/xml" />
+
+        <source-file src="src/android/UploadFile.java"        target-dir="src/com/chinamobile/upload" />
+		 <source-file src="src/android/UploadFileUtil.java"        target-dir="src/com/chinamobile/upload" />
+        <source-file src="src/android/FileProvider.java"     target-dir="src/com/chinamobile/upload" />
+
+		<!-- 项目jar包 -->
+        <source-file src="src/android/okgo-3.0.2.jar" target-dir="libs"/>
+		<source-file src="src/android/okhttp-3.8.1.jar" target-dir="libs"/>
+		<source-file src="src/android/okio-1.9.0.jar" target-dir="libs"/>
+    </platform>
+    
+    <platform name="ios">
+        
+		<!-- 文件上传插件 -->
+		<config-file target="config.xml" parent="/*">
+			<feature name="UploadFile">
+				<param name="ios-package" value="UploadFile" />
+			</feature>
+		</config-file>
+        <!--  项目文件 -->
+        <header-file src="src/ios/UploadFile.h" />
+        <source-file src="src/ios/UploadFile.m" />
+        <header-file src="src/ios/NetUtil.h"/>
+        <source-file src="src/ios/NetUtil.m"/>
+        <header-file src="src/ios/Reachability.h"/>
+        <source-file src="src/ios/Reachability.m"/>
+        <source-file src="src/ios/UploadFile.m" />
+        <header-file src="src/ios/UploadFileUtil.h" />
+        <source-file src="src/ios/UploadFileUtil.m" />
+        <header-file src="src/ios/AFManager.h" />
+        <source-file src="src/ios/AFManager.m" />
+        <header-file src="src/ios/InstanceSessionManager.h" />
+        <source-file src="src/ios/InstanceSessionManager.m" />
+        
+        <header-file src="src/ios/AFNetworking/AFNetworking/AFHTTPSessionManager.h" />
+        <source-file src="src/ios/AFNetworking/AFNetworking/AFHTTPSessionManager.m" />
+        <header-file src="src/ios/AFNetworking/AFNetworking/AFNetworking.h" />
+        
+        <header-file src="src/ios/AFNetworking/AFNetworking/AFNetworkReachabilityManager.h" />
+        <source-file src="src/ios/AFNetworking/AFNetworking/AFNetworkReachabilityManager.m" />
+        
+        <header-file src="src/ios/AFNetworking/AFNetworking/AFSecurityPolicy.h" />
+        <source-file src="src/ios/AFNetworking/AFNetworking/AFSecurityPolicy.m" />
+        
+        <header-file src="src/ios/AFNetworking/AFNetworking/AFURLRequestSerialization.h" />
+        <source-file src="src/ios/AFNetworking/AFNetworking/AFURLRequestSerialization.m" />
+        
+        <header-file src="src/ios/AFNetworking/AFNetworking/AFURLResponseSerialization.h" />
+        <source-file src="src/ios/AFNetworking/AFNetworking/AFURLResponseSerialization.m" />
+        
+        
+        <header-file src="src/ios/AFNetworking/AFNetworking/AFURLSessionManager.h" />
+        <source-file src="src/ios/AFNetworking/AFNetworking/AFURLSessionManager.m" />
+        
+        <header-file src="src/ios/AFNetworking/UIKit+AFNetworking/AFAutoPurgingImageCache.h" />
+        <source-file src="src/ios/AFNetworking/UIKit+AFNetworking/AFAutoPurgingImageCache.m" />
+        
+        <header-file src="src/ios/AFNetworking/UIKit+AFNetworking/AFImageDownloader.h" />
+        <source-file src="src/ios/AFNetworking/UIKit+AFNetworking/AFImageDownloader.m" />
+        
+        <header-file src="src/ios/AFNetworking/UIKit+AFNetworking/AFNetworkActivityIndicatorManager.h" />
+        <source-file src="src/ios/AFNetworking/UIKit+AFNetworking/AFNetworkActivityIndicatorManager.m" />
+        
+        <header-file src="src/ios/AFNetworking/UIKit+AFNetworking/UIActivityIndicatorView+AFNetworking.h" />
+        <source-file src="src/ios/AFNetworking/UIKit+AFNetworking/UIActivityIndicatorView+AFNetworking.m" />
+        
+        
+        
+        <header-file src="src/ios/AFNetworking/UIKit+AFNetworking/UIButton+AFNetworking.h" />
+        <source-file src="src/ios/AFNetworking/UIKit+AFNetworking/UIButton+AFNetworking.m" />
+
+        <header-file src="src/ios/AFNetworking/UIKit+AFNetworking/UIImageView+AFNetworking.h" />
+        <source-file src="src/ios/AFNetworking/UIKit+AFNetworking/UIImageView+AFNetworking.m" />
+        
+        <header-file src="src/ios/AFNetworking/UIKit+AFNetworking/UIKit+AFNetworking.h" />
+        
+        <header-file src="src/ios/AFNetworking/UIKit+AFNetworking/UIProgressView+AFNetworking.h" />
+        <source-file src="src/ios/AFNetworking/UIKit+AFNetworking/UIProgressView+AFNetworking.m" />
+        
+        <header-file src="src/ios/AFNetworking/UIKit+AFNetworking/UIRefreshControl+AFNetworking.h" />
+        <source-file src="src/ios/AFNetworking/UIKit+AFNetworking/UIRefreshControl+AFNetworking.m" />
+        
+        <header-file src="src/ios/AFNetworking/UIKit+AFNetworking/UIWebView+AFNetworking.h" />
+        <source-file src="src/ios/AFNetworking/UIKit+AFNetworking/UIWebView+AFNetworking.m" />
+        
+        
+        <framework src="CFNetwork.framework" weak="true" />
+        <framework src="SystemConfiguration.framework" weak="true" />
+        <framework src="Foundation.framework" weak="true" />
+        <framework src="UIKit.framework" weak="true" />
+        <framework src="Security.framework" weak="true" />
+        <framework src="libz.dylib" weak="true" />
+        
+    </platform>
+
+</plugin>
