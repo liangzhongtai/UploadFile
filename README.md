@@ -1,5 +1,5 @@
 ##UploadFile插件使用说明
-* 版本:2.2.0
+* 版本:2.4.0
 
 ##环境配置
 * npm 4.4.1 +
@@ -8,11 +8,37 @@
 
 ##使用流程
 ####注意:
-######Mac平台,如果以下的控制台命令遇到权限问题，可以在命令前加sudo
+######ios平台,在Mac系统下，如果以下的控制台命令遇到权限问题，可以在命令前加sudo
+#####安卓平台，插件加入第三方jar包后，如果cordova build 命令后，报以下异常:
+#####‘*\项目名\platforms\android\Androidmanifest.xml’
+#####‘*\项目名\platfroms\android\res\xml\config.xml’
+#####请通过以下方法解决问题
+#####方法一:项目根目录\platforms\android\cordova\Api.js文件作以下修改，否则执行cordova build命令会报异常：UnhandledPromiseRejectionWarning: Error: ENOENT: no such file or directory,......；
+
+```javascript
+this.locations = {
+    root: self.root,
+    www: path.join(self.root, 'assets/www'),
+    res: path.join(self.root, 'res'),
+    platformWww: path.join(self.root, 'platform_www'),
+    configXml: path.join(self.root, 'app/src/main/res/xml/config.xml'),
+    defaultConfigXml: path.join(self.root, 'cordova/defaults.xml'),
+    strings: path.join(self.root, 'app/src/main/res/values/strings.xml'),
+    manifest: path.join(self.root, 'app/src/main/AndroidManifest.xml'),
+    build: path.join(self.root, 'build'),
+    javaSrc: path.join(self.root, 'app/src/main/java/'),
+    // NOTE: Due to platformApi spec we need to return relative paths here
+    cordovaJs: 'bin/templates/project/assets/www/cordova.js',
+    cordovaJsSrc: 'cordova-js-src'
+};
+```
+#####然后手动将没有成功自动导入的jar包，手动放置到libs目录下
+#####方法二:使用的cordova-android的版本小于7.0.0,如cordova platform add android@6.4.0
+
 
 ######1.进入项目的根目录，添加相机插件::com.chinamobile.upload.uploadfile
 * 为项目添加UploadFile插件，执行:`cordova plugin add com.chinamobile.upload.uploadfile`
-* 如果要删除插件,执行:`cordova plugin add com.chinamobile.upload.UploadFile`
+* 如果要删除插件,执行:`cordova plugin add com.chinamobile.upload.uploadfile`
 * 为项目添加对应的platform平台,已添加过，此步忽略，执行:
 * 安卓平台: `cordova platform add android`
 * ios 平台:`cordova platform add ios`
