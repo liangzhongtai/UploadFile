@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='utf-8'?>
-<plugin id="com.chinamoblie.upload.uploadfile" version="2.4.0" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
+<plugin id="com.chinamobile.upload.uploadfile" version="2.7.0" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
     <name>uploadfile</name>
-    <js-module name="uploadfile" src="www/uploadfile.js">
+    <js-module name="UploadFile" src="www/uploadfile.js">
         <clobbers target="cordova.plugins.uploadfile" />
     </js-module>
 

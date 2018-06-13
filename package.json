@@ -1,6 +1,6 @@
 {
   "name": "com.chinamobile.upload.uploadfile",
-  "version": "2.4.0",
+  "version": "2.7.0",
   "description": "this is a plugin about uploadfile",
   "main": "index.js",
   "scripts": {
@@ -9,7 +9,7 @@
   "author": "",
   "license": "ISC",
    "cordova": {
-    "id": "com.chinamobile.upload.UploadFile",
+    "id": "com.chinamobile.upload.uploadfile",
     "platforms": [
       "android",
       "ios"
