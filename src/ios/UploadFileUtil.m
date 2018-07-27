@@ -12,7 +12,7 @@
 
 @interface UploadFileUtil()
 
-@property(nonatomic,strong)UploadFile *plugin;
+
 
 @end
 
@@ -102,7 +102,8 @@
     
     [[AFManager shareManager] uploadMoreImageWithUrlString:url withOperations:parms withImageArray:images withServiceName:fileKeys  withFileName:fileNames withSuccessBlock:^(id result) {
         NSLog(@"success_result=%@",result);
-        [self sendUploadResult:@[[NSNumber numberWithInteger:uploadType],[NSNumber numberWithInteger:UPLOAD_SUCCESS],result] andSuccess:YES];
+        [self sendUploadResult:@[[NSNumber numberWithInteger:uploadType],[NSNumber numberWithInteger:UPLOAD_PROGRESS],[NSNumber numberWithFloat:1.00]] andSuccess:YES];
+        [self sendUploadResult:@[[NSNumber numberWithInteger:uploadType],[NSNumber numberWithInteger:UPLOAD_SUCCESS],[self dictToJson:result]] andSuccess:YES];
     } withFailurBlock:^(NSError *error) {
         NSLog(@"error=%@",error);
         if([NetUtil netAvailable]){
@@ -111,7 +112,7 @@
             [self sendUploadResult:@[[NSNumber numberWithInteger:uploadType],[NSNumber numberWithInteger:NET_NOT_AVAILABLE],@"网络不可用"] andSuccess:NO];
         }
     } withUpLoadProgress:^(float progress){
-        [self  sendUploadResult:@[[NSNumber numberWithInteger:uploadType],[NSNumber numberWithInteger:UPLOAD_PROGRESS],[NSNumber numberWithFloat:progress]] andSuccess:YES];
+        [self sendUploadResult:@[[NSNumber numberWithInteger:uploadType],[NSNumber numberWithInteger:UPLOAD_PROGRESS],[NSNumber numberWithFloat:progress]] andSuccess:YES];
     } taskKey:key];
 }
 
@@ -122,6 +123,26 @@
         [self.plugin faileWithMessage:message];
     }
     
+}
+
+-(NSString *)dictToJson:(NSDictionary *)dict{
+    NSError *error;
+    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:dict options:NSJSONWritingPrettyPrinted error:&error];
+    NSString *jsonString;
+    if (!jsonData) {
+        NSLog(@"%@",error);
+    }else{
+        jsonString = [[NSString alloc]initWithData:jsonData encoding:NSUTF8StringEncoding];
+    }
+    NSMutableString *mutStr = [NSMutableString stringWithString:jsonString];
+    NSRange range = {0,jsonString.length};
+    //去掉字符串中的空格
+    [mutStr replaceOccurrencesOfString:@" " withString:@"" options:NSLiteralSearch range:range];
+    NSRange range2 = {0,mutStr.length};
+    //去掉字符串中的换行符
+    [mutStr replaceOccurrencesOfString:@"\n" withString:@"" options:NSLiteralSearch range:range2];
+    return mutStr;
+
 }
 
 @end

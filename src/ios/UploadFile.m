@@ -31,10 +31,10 @@
         self.keys = [NSMutableArray arrayWithArray:command.arguments[2]];
         self.values = [NSMutableArray arrayWithArray:command.arguments[3]];
     }
-    self.url = command.arguments[0];
     if(self.uploadUtil == nil){
         self.uploadUtil = [[UploadFileUtil alloc] init];
     }
+    self.uploadUtil.plugin = self;
     //上传文件
     [self.uploadUtil httpPost:self.url andParams:[UploadFileUtil httpDic:self.keys andValues:self.values andPlugin:self andUploadType:self.uploadType]];
 }
@@ -50,6 +50,7 @@
 -(void)successWithMessage:(NSArray *)messages{
     if(self.callbackId==nil)return;
     CDVPluginResult *result = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsArray:messages];
+    [result setKeepCallbackAsBool:true];
     [self.commandDelegate sendPluginResult:result callbackId:self.callbackId];
 }
 

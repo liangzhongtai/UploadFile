@@ -27,6 +27,7 @@ static NSInteger const FILE_NO_EXIST     = 4;
 //上传进度
 static NSInteger const UPLOAD_PROGRESS   = 5;
 
+
 @interface UploadFile : CDVPlugin
 
 -(void)test:(NSString *)url andKeys:(NSArray *)keys andValues:(NSArray *)values;

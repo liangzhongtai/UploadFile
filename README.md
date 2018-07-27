@@ -1,19 +1,19 @@
-##UploadFile²å¼şÊ¹ÓÃËµÃ÷
-* °æ±¾:2.7.0
+## UploadFileæ’ä»¶ä½¿ç”¨è¯´æ˜
+* ç‰ˆæœ¬:3.7.0
 
-##»·¾³ÅäÖÃ
+## ç¯å¢ƒé…ç½®
 * npm 4.4.1 +
 * node 9.8.0 +
 
 
-##Ê¹ÓÃÁ÷³Ì
-####×¢Òâ:
-######iosÆ½Ì¨,ÔÚMacÏµÍ³ÏÂ£¬Èç¹ûÒÔÏÂµÄ¿ØÖÆÌ¨ÃüÁîÓöµ½È¨ÏŞÎÊÌâ£¬¿ÉÒÔÔÚÃüÁîÇ°¼Ósudo
-#####°²×¿Æ½Ì¨£¬²å¼ş¼ÓÈëµÚÈı·½jar°üºó£¬Èç¹ûcordova build ÃüÁîºó£¬±¨ÒÔÏÂÒì³£:
-#####¡®*\ÏîÄ¿Ãû\platforms\android\Androidmanifest.xml¡¯
-#####¡®*\ÏîÄ¿Ãû\platfroms\android\res\xml\config.xml¡¯
-#####ÇëÍ¨¹ıÒÔÏÂ·½·¨½â¾öÎÊÌâ
-#####·½·¨Ò»:ÏîÄ¿¸ùÄ¿Â¼\platforms\android\cordova\Api.jsÎÄ¼ş×÷ÒÔÏÂĞŞ¸Ä£¬·ñÔòÖ´ĞĞcordova buildÃüÁî»á±¨Òì³££ºUnhandledPromiseRejectionWarning: Error: ENOENT: no such file or directory,......£»
+## ä½¿ç”¨æµç¨‹
+#### æ³¨æ„:
+###### ioså¹³å°,åœ¨Macç³»ç»Ÿä¸‹ï¼Œå¦‚æœä»¥ä¸‹çš„æ§åˆ¶å°å‘½ä»¤é‡åˆ°æƒé™é—®é¢˜ï¼Œå¯ä»¥åœ¨å‘½ä»¤å‰åŠ sudo
+##### å®‰å“å¹³å°ï¼Œæ’ä»¶åŠ å…¥ç¬¬ä¸‰æ–¹jaråŒ…åï¼Œå¦‚æœcordova build å‘½ä»¤åï¼ŒæŠ¥ä»¥ä¸‹å¼‚å¸¸:
+##### â€˜*\é¡¹ç›®å\platforms\android\Androidmanifest.xmlâ€™
+##### â€˜*\é¡¹ç›®å\platfroms\android\res\xml\config.xmlâ€™
+##### è¯·é€šè¿‡ä»¥ä¸‹æ–¹æ³•è§£å†³é—®é¢˜
+##### æ–¹æ³•ä¸€:é¡¹ç›®æ ¹ç›®å½•\platforms\android\cordova\Api.jsæ–‡ä»¶ä½œä»¥ä¸‹ä¿®æ”¹ï¼Œå¦åˆ™æ‰§è¡Œcordova buildå‘½ä»¤ä¼šæŠ¥å¼‚å¸¸ï¼šUnhandledPromiseRejectionWarning: Error: ENOENT: no such file or directory,......ï¼›
 
 ```javascript
 this.locations = {
@@ -32,65 +32,68 @@ this.locations = {
     cordovaJsSrc: 'cordova-js-src'
 };
 ```
-#####È»ºóÊÖ¶¯½«Ã»ÓĞ³É¹¦×Ô¶¯µ¼ÈëµÄjar°ü£¬ÊÖ¶¯·ÅÖÃµ½libsÄ¿Â¼ÏÂ
-#####·½·¨¶ş:Ê¹ÓÃµÄcordova-androidµÄ°æ±¾Ğ¡ÓÚ7.0.0,Èçcordova platform add android@6.4.0
+##### ç„¶åæ‰‹åŠ¨å°†æ²¡æœ‰æˆåŠŸè‡ªåŠ¨å¯¼å…¥çš„jaråŒ…ï¼Œæ‰‹åŠ¨æ”¾ç½®åˆ°libsç›®å½•ä¸‹
+##### æ–¹æ³•äºŒ:ä½¿ç”¨çš„cordova-androidçš„ç‰ˆæœ¬å°äº7.0.0,å¦‚cordova platform add android@6.4.0
 
 
-######1.½øÈëÏîÄ¿µÄ¸ùÄ¿Â¼£¬Ìí¼ÓÏà»ú²å¼ş::com.chinamobile.upload.uploadfile
-* ÎªÏîÄ¿Ìí¼ÓUploadFile²å¼ş£¬Ö´ĞĞ:`cordova plugin add com.chinamobile.upload.uploadfile`
-* Èç¹ûÒªÉ¾³ı²å¼ş,Ö´ĞĞ:`cordova plugin add com.chinamobile.upload.uploadfile`
-* ÎªÏîÄ¿Ìí¼Ó¶ÔÓ¦µÄplatformÆ½Ì¨,ÒÑÌí¼Ó¹ı£¬´Ë²½ºöÂÔ£¬Ö´ĞĞ:
-* °²×¿Æ½Ì¨: `cordova platform add android`
-* ios Æ½Ì¨:`cordova platform add ios`
-* ½«²å¼şÌí¼Óµ½¶ÔÓ¦Æ½Ì¨ºó,Ö´ĞĞ: `cordova build`
+###### 1.è¿›å…¥é¡¹ç›®çš„æ ¹ç›®å½•ï¼Œæ·»åŠ ç›¸æœºæ’ä»¶::com.chinamobile.upload.uploadfile
+* ä¸ºé¡¹ç›®æ·»åŠ UploadFileæ’ä»¶ï¼Œæ‰§è¡Œ:`cordova plugin add com.chinamobile.upload.uploadfile`
+* å¦‚æœè¦åˆ é™¤æ’ä»¶,æ‰§è¡Œ:`cordova plugin add com.chinamobile.upload.uploadfile`
+* ä¸ºé¡¹ç›®æ·»åŠ å¯¹åº”çš„platformå¹³å°,å·²æ·»åŠ è¿‡ï¼Œæ­¤æ­¥å¿½ç•¥ï¼Œæ‰§è¡Œ:
+* å®‰å“å¹³å°: `cordova platform add android`
+* ios å¹³å°:`cordova platform add ios`
+* å°†æ’ä»¶æ·»åŠ åˆ°å¯¹åº”å¹³å°å,æ‰§è¡Œ: `cordova build`
 
-######2.ÔÚjsÎÄ¼şÖĞ,Í¨¹ıÒÔÏÂjs·½·¨µ÷ÓÃ²å¼ş£¬¿ÉÒÔÖ´ĞĞapp¸üĞÂ¹¦ÄÜ
+###### 2.åœ¨jsæ–‡ä»¶ä¸­,é€šè¿‡ä»¥ä¸‹jsæ–¹æ³•è°ƒç”¨æ’ä»¶ï¼Œå¯ä»¥æ‰§è¡Œappæ›´æ–°åŠŸèƒ½
 *
 ```javascript
     camera: function(){
-        //Ïònative·¢³öÎÄ¼şÉÏ´«ÇëÇó
-        //android¶Ë
-        //²ÎÊıÔªËØ1£º0£ºÉÏ´«£¬ 1£ºÈ¡Ïûurl¶ÔÓ¦µÄÉÏ´«£¬2£ºÈ¡ÏûËùÓĞÉÏ´«
-        //²ÎÊıÔªËØ2£º½Ó¿Úurl
-        //²ÎÊıÔªËØ3£ºpost-keys
-        //²ÎÊıÔªËØ4£ºpost-values
+        //å‘nativeå‘å‡ºæ–‡ä»¶ä¸Šä¼ è¯·æ±‚
+        //success:æˆåŠŸçš„å›è°ƒå‡½æ•°
+        //error:å¤±è´¥çš„å›è°ƒå‡½æ•°
+        //UploadFile:æ’ä»¶å,å›ºå®šå€¼
+        //coolMethod:æ’ä»¶æ–¹æ³•ï¼Œå›ºå®šå€¼
+        //[0,"http://",["file","taskId"],[["/storage/emulated/0/DCIM/71_1528608551054.jpg","/storage/emulated/0/DCIM/70_1528608610614.jpg","/storage/emulated/0/DCIM/70_1528608636480.jpg"],"4596673]:æ’ä»¶æ–¹æ³•å‚æ•°ï¼Œå…·ä½“å¯¹åº”ä»¥ä¸‹
+        //å‚æ•°1ï¼š0ï¼šä¸Šä¼ ï¼Œ 1ï¼šå–æ¶ˆurlå¯¹åº”çš„ä¸Šä¼ ï¼Œ2ï¼šå–æ¶ˆæ‰€æœ‰ä¸Šä¼ 
+        //å‚æ•°2ï¼šæ¥å£url
+        //å‚æ•°3ï¼špost-keys
+        //å‚æ•°4ï¼špost-values
         cordova.exec(null,null,"UploadFile","coolMethod",[0,"http://",["file","taskId"],[["/storage/emulated/0/DCIM/71_1528608551054.jpg","/storage/emulated/0/DCIM/70_1528608610614.jpg","/storage/emulated/0/DCIM/70_1528608636480.jpg"],"4596673]]);
     }
     
-    //Ä¿Ç°Ö»ÓĞandroid¶Ë»á»Øµ÷¸üĞÂ×´Ì¬
+    //ç›®å‰åªæœ‰androidç«¯ä¼šå›è°ƒæ›´æ–°çŠ¶æ€
     success: function(var result){
-        //¶¯×÷:0:ÉÏ´«£¬1£ºÈ¡Ïûurl¶ÔÓ¦µÄÉÏ´«£¬2£ºÈ¡ÏûËùÓĞÉÏ´«
+        //åŠ¨ä½œ:0:ä¸Šä¼ ï¼Œ1ï¼šå–æ¶ˆurlå¯¹åº”çš„ä¸Šä¼ ï¼Œ2ï¼šå–æ¶ˆæ‰€æœ‰ä¸Šä¼ 
         var uploadType = result[0];
-        //status=3:ÉÏ´«Íê³É
-        //status=4:½ø¶È
+        //status=3:ä¸Šä¼ å®Œæˆ
+        //status=4:è¿›åº¦
         var status     = result[1];
-        //ÌáÊ¾ĞÅÏ¢£¬Èç¹ûstatus=4 £¬Ôòmessage = ½ø¶È¸ñÊ½£º 0.54323245¡£
+        //æç¤ºä¿¡æ¯ï¼Œå¦‚æœstatus=4 ï¼Œåˆ™message = è¿›åº¦æ ¼å¼ï¼š 0.54323245ã€‚
         var message    = result[2];
     }
 
     error: function(var result){
-        //ÉÏ´«Ê§°ÜÌáÊ¾
-       //¶¯×÷:0:ÉÏ´«£¬1£ºÈ¡Ïûurl¶ÔÓ¦µÄÉÏ´«£¬2£ºÈ¡ÏûËùÓĞÉÏ´«
+        //ä¸Šä¼ å¤±è´¥æç¤º
+       //åŠ¨ä½œ:0:ä¸Šä¼ ï¼Œ1ï¼šå–æ¶ˆurlå¯¹åº”çš„ä¸Šä¼ ï¼Œ2ï¼šå–æ¶ˆæ‰€æœ‰ä¸Šä¼ 
         var uploadType = result[0];
-        //status=1:ÍøÂç²»¿ÉÓÃ
-        //status=2:ÉÏ´«Ê§°Ü
+        //status=1:ç½‘ç»œä¸å¯ç”¨
+        //status=2:ä¸Šä¼ å¤±è´¥
         var status     = result[1];
-        //ÌáÊ¾ĞÅÏ¢
+        //æç¤ºä¿¡æ¯
         var message    = result[2];
     }
 ```
 
-*×¢ÒâÎÊÌâ:
-###### cordova.execº¯ÊıÖĞ,JSONArray²ÎÊıµÄµÚÈı¸öÔªËØ¹Ì¶¨ÎªÎÄ¼ş²ÎÊı
-###### IOSÆ½Ì¨£¬ĞèÒªÔÚÏîÄ¿µÄ info.list Ìí¼ÓÒÔÏÂÈ¨ÏŞ App Transport Security Settings Ìí¼Ó: Allow Arbitrary Loads ÉèÖÃÎªYES 
+*æ³¨æ„é—®é¢˜:
+###### cordova.execå‡½æ•°ä¸­,JSONArrayå‚æ•°çš„ç¬¬ä¸‰ä¸ªå…ƒç´ å›ºå®šä¸ºæ–‡ä»¶å‚æ•°
+###### IOSå¹³å°ï¼Œéœ€è¦åœ¨é¡¹ç›®çš„ info.list æ·»åŠ ä»¥ä¸‹æƒé™ App Transport Security Settings æ·»åŠ : Allow Arbitrary Loads è®¾ç½®ä¸ºYES 
 
 
-##ÎÊÌâ·´À¡
-  ÔÚÊ¹ÓÃÖĞÓĞÈÎºÎÎÊÌâ£¬¿ÉÒÔÓÃÒÔÏÂÁªÏµ·½Ê½.
+## é—®é¢˜åé¦ˆ
+  åœ¨ä½¿ç”¨ä¸­æœ‰ä»»ä½•é—®é¢˜ï¼Œå¯ä»¥ç”¨ä»¥ä¸‹è”ç³»æ–¹å¼.
   
-  * ÓÊ¼ş:18520660170@139.com
-  * Ê±¼ä:2018-5-24 16:00:00
-
+  * é‚®ä»¶:18520660170@139.com
+  * æ—¶é—´:2018-5-24 16:00:00
 
 
 

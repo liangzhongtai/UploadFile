@@ -1,6 +1,6 @@
 {
   "name": "com.chinamobile.upload.uploadfile",
-  "version": "2.7.0",
+  "version": "3.7.0",
   "description": "this is a plugin about uploadfile",
   "main": "index.js",
   "scripts": {

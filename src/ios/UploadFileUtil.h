@@ -16,6 +16,8 @@ static NSString *const KEY_FILE_KEYS     = @"key_file_keys";
 
 @interface UploadFileUtil : NSObject
 
+@property(nonatomic,strong)UploadFile *plugin;
+
 +(NSMutableDictionary *)httpDic:(NSArray *)keys andValues:(NSArray *)values andPlugin:(UploadFile *)plugin  andUploadType:(NSInteger)uploadType;
 
 +(NSMutableDictionary *)httpDicImge:(NSMutableDictionary *)dic andImages:(NSMutableArray<NSMutableArray<UIImage *> *> *)images andServicveName:(NSArray<NSString *> *)filekeys andFileNames:(NSMutableArray<NSMutableArray<NSString *> *> *)fileNames ;

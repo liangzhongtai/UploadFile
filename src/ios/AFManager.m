@@ -292,7 +292,7 @@
         
     } progress:^(NSProgress * _Nonnull uploadProgress) {
         
-        progress(uploadProgress.completedUnitCount / uploadProgress.totalUnitCount);
+        progress((double)uploadProgress.completedUnitCount / uploadProgress.totalUnitCount);
         
     } success:^(NSURLSessionDataTask * _Nonnull task, NSDictionary *  _Nullable responseObject) {
         
@@ -361,7 +361,7 @@
         
     } progress:^(NSProgress * _Nonnull uploadProgress) {
         
-        progress(uploadProgress.completedUnitCount / uploadProgress.totalUnitCount);
+        progress((double)uploadProgress.completedUnitCount / uploadProgress.totalUnitCount);
         
     } success:^(NSURLSessionDataTask * _Nonnull task, NSDictionary *  _Nullable responseObject) {
         
@@ -435,7 +435,7 @@
                     
                 } progress:^(NSProgress * _Nonnull uploadProgress) {
                     
-                    progress(uploadProgress.completedUnitCount / uploadProgress.totalUnitCount);
+                    progress((double)uploadProgress.completedUnitCount / uploadProgress.totalUnitCount);
                     
                 } success:^(NSURLSessionDataTask * _Nonnull task, NSDictionary *  _Nullable responseObject) {
                     

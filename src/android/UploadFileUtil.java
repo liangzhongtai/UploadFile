@@ -132,7 +132,7 @@ public class UploadFileUtil {
 
     //执行上传请求
     private long distance;
-    public static int interval = 500;
+    public static int interval = 100;
     public void upload(final int uploadType, final String url, final String[] keys, final List values, final boolean base64){
         Log.d(UploadFile.TAG,"url="+url);
         Log.d(UploadFile.TAG,"keys.count="+keys.length);
@@ -352,7 +352,10 @@ public class UploadFileUtil {
             if(msg.what == HANDLER_ERROR){
                 if(listener!=null)listener.sendUpdateResult((Integer) objs[0],UploadFile.UPLOAD_FAILE,(String) objs[1]);
             }else if(msg.what == HANDLER_FINISH){
-                if(listener!=null)listener.sendUpdateResult((Integer)objs[0],UploadFile.UPLOAD_SUCCESS,(String) objs[1]);
+                if(listener!=null){
+                    listener.sendUpdateResult((Integer)objs[0],UploadFile.UPLOAD_PROGRESS,"1.00");
+                    listener.sendUpdateResult((Integer)objs[0],UploadFile.UPLOAD_SUCCESS,(String) objs[1]);
+                }
             }else if(msg.what == HANDLER_FILE_NO_EXIT){
                 if(listener!=null)listener.sendUpdateResult((Integer)objs[0],UploadFile.FILE_NO_EXIST,(String) objs[1]);
             }else if(msg.what == HANDLER_PROGRESS){
