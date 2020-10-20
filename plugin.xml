@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<plugin id="com.chinamobile.upload.uploadfile" version="3.7.0" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
+<plugin id="com.chinamobile.upload.uploadfile" version="4.0.1" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
     <name>uploadfile</name>
     <js-module name="UploadFile" src="www/uploadfile.js">
         <clobbers target="cordova.plugins.uploadfile" />
@@ -45,8 +45,18 @@
         <source-file src="src/android/xml/uploadfile_provider_paths.xml"  target-dir="app/src/main/res/xml" />
 
         <source-file src="src/android/UploadFile.java"        target-dir="src/com/chinamobile/upload" />
-		 <source-file src="src/android/UploadFileUtil.java"        target-dir="src/com/chinamobile/upload" />
+        <source-file src="src/android/UploadFileUtil.java"        target-dir="src/com/chinamobile/upload" />
         <source-file src="src/android/FileProvider.java"     target-dir="src/com/chinamobile/upload" />
+
+        <source-file src="src/android/DownloadBreakPoint.java"     target-dir="src/com/chinamobile/upload" />
+        <source-file src="src/android/DownloadBreakPointListener.java"     target-dir="src/com/chinamobile/upload" />
+        <source-file src="src/android/DownloadBreakPointManager.java"     target-dir="src/com/chinamobile/upload" />
+        <source-file src="src/android/DownloadFileUtil.java"     target-dir="src/com/chinamobile/upload" />
+        <source-file src="src/android/DownloadFloatingService.java"     target-dir="src/com/chinamobile/upload" />
+
+        <source-file src="src/android/CWebSocket.java"     target-dir="src/com/chinamobile/upload" />
+        <source-file src="src/android/CWebSocketClient.java"     target-dir="src/com/chinamobile/upload" />
+        <source-file src="src/android/CWebSocketClientService.java"     target-dir="src/com/chinamobile/upload" />
 
 		<!-- 项目jar包 -->
         <source-file src="src/android/okgo-3.0.2.jar" target-dir="app/libs"/>
@@ -86,6 +96,15 @@
         <source-file src="src/ios/AFManager.m" />
         <header-file src="src/ios/InstanceSessionManager.h" />
         <source-file src="src/ios/InstanceSessionManager.m" />
+
+        <header-file src="src/ios/FDownLoader.h" />
+        <source-file src="src/ios/FDownLoader.m" />
+        <header-file src="src/ios/FDownLoaderManager.h" />
+        <source-file src="src/ios/FDownLoaderManager.m" />
+        <header-file src="src/ios/FFileTool.h" />
+        <source-file src="src/ios/FFileTool.m" />
+        <header-file src="src/ios/NSString+MD5.h" />
+        <source-file src="src/ios/NSString+MD5.m" />
         
         <header-file src="src/ios/AFNetworking/AFNetworking/AFHTTPSessionManager.h" />
         <source-file src="src/ios/AFNetworking/AFNetworking/AFHTTPSessionManager.m" />

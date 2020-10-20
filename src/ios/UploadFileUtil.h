@@ -18,13 +18,18 @@ static NSString *const KEY_FILE_KEYS     = @"key_file_keys";
 
 @property(nonatomic,strong)UploadFile *plugin;
 
-+(NSMutableDictionary *)httpDic:(NSArray *)keys andValues:(NSArray *)values andPlugin:(UploadFile *)plugin  andUploadType:(NSInteger)uploadType;
++(NSMutableDictionary *)httpDic:(NSArray *)keys andValues:(NSArray *)values andPlugin:(UploadFile *)plugin  andUploadType:(NSInteger)uploadType andCallBackId:(NSString *)callback;
 
-+(NSMutableDictionary *)httpDicImge:(NSMutableDictionary *)dic andImages:(NSMutableArray<NSMutableArray<UIImage *> *> *)images andServicveName:(NSArray<NSString *> *)filekeys andFileNames:(NSMutableArray<NSMutableArray<NSString *> *> *)fileNames ;
++(NSMutableDictionary *)httpDicImge:(NSMutableDictionary *)dic andImages:(NSMutableArray<NSMutableArray<UIImage *> *> *)images andServicveName:(NSArray<NSString *> *)filekeys andFileNames:(NSMutableArray<NSMutableArray<NSString *> *> *)fileNames andCallBackId:(NSString *)callback;
 
+-(void)httpCancel:(NSString *)url andCallBackId:(NSString *)callback;
 
--(void)httpPost:(NSString *)url andParams:(NSMutableDictionary *)parms;
+-(void)httpCancelAll:(NSString *)callback;
 
--(void)sendUploadResult:(NSArray *)message andSuccess:(BOOL)success;
+-(void)httpDownload:(NSString *)url andFileName:(NSString *)fileName andDirName:(NSString *)dirName andUploadType:(NSInteger)uploadType andCallBackId:(NSString *)callback;
+
+-(void)httpPost:(NSString *)url andParams:(NSMutableDictionary *)parms andCallBackId:(NSString *)callback;
+
+-(void)sendUploadResult:(NSArray *)message andSuccess:(BOOL)success andKeep:(BOOL)keep andCallBackId:(NSString *)callback;
 
 @end

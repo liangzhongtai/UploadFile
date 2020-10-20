@@ -34,7 +34,7 @@ this.locations = {
 ```
 ##### 然后手动将没有成功自动导入的jar包，手动放置到libs目录下
 ##### 方法二:使用的cordova-android的版本小于7.0.0,如cordova platform add android@6.4.0
-
+##### 方法三:在cordova hook文件中，对android.json文件中的config.xml路径作修改。
 
 ###### 1.进入项目的根目录，添加相机插件::com.chinamobile.upload.uploadfile
 * 为项目添加UploadFile插件，执行:`cordova plugin add com.chinamobile.upload.uploadfile`
@@ -44,10 +44,10 @@ this.locations = {
 * ios 平台:`cordova platform add ios`
 * 将插件添加到对应平台后,执行: `cordova build`
 
-###### 2.在js文件中,通过以下js方法调用插件，可以执行文件上传操作
+###### 2.在js文件中,通过以下js方法调用插件，可以执行app更新功能
 *
 ```javascript
-    uploadfile: function(){
+    camera: function(){
         //向native发出文件上传请求
         //success:成功的回调函数
         //error:失败的回调函数
@@ -89,11 +89,11 @@ this.locations = {
 ###### IOS平台，需要在项目的 info.list 添加以下权限 App Transport Security Settings 添加: Allow Arbitrary Loads 设置为YES 
 
 
-## 问题反馈
-  在使用中有任何问题，可以用以下方式联系.
-  * 作者:梁仲太
+##问题反馈
+  在使用中有任何问题，可以用以下联系方式.
+  
   * 邮件:18520660170@139.com
-  * 时间:2018-8-27 16:00:00
+  * 时间:2018-5-24 16:00:00
 
 
 
